@@ -18,6 +18,19 @@ double sumaInvertida(double *arreglo, long N) {
 
 // ************************************************************************
 // ************************************************************************
+double sumaNormal(double *arreglo, long N) {
+    
+    double suma = 0;
+    long c;
+    for(c = 0; c < N; c++){ // sumar los primeros n valores en orden inverso
+        suma += arreglo[c];
+    }
+
+    return suma;
+}
+
+// ************************************************************************
+// ************************************************************************
 void sumaEnIncrementos(double *arreglo, long tamArreglo, double factor) {
 
     long N = 100;           // invocar la rutina desde 100 hasta el tamanio del arreglo
