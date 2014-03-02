@@ -32,7 +32,8 @@ void sumaEnIncrementos(double *arreglo, long tamArreglo, double factor) {
         long suma = sumaInvertida(arreglo, N);  // r llamadas a la funcion suma
         fin = clock();
         double tiempoMS = ((double)(fin - inicio) / CLOCKS_PER_SEC * 1000);
-        printf("N=%i, t=%f ms\n", N, tiempoMS);
+        double bytesSumados = (N-1) * sizeof(double) / (1024);
+        printf("N=%i, t=%f ms, KB=%f\n", N, tiempoMS, bytesSumados);
     }
 
 }
