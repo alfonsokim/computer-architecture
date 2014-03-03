@@ -42,7 +42,8 @@ void sumaEnIncrementos(double *arreglo, long tamArreglo, double factor) {
     
     for(; N <= tamArreglo; N += salto) {        // "multiplicar el valor por una constante" 
         inicio = clock();
-        long suma = sumaInvertida(arreglo, N);  // r llamadas a la funcion suma
+        //long suma = sumaInvertida(arreglo, N);  // r llamadas a la funcion suma
+        long suma = sumaNormal(arreglo, N);
         fin = clock();
         double tiempoMS = ((double)(fin - inicio) / CLOCKS_PER_SEC * 1000);
         double bytesSumados = (N-1) * sizeof(double) / (1024);
