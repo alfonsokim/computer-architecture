@@ -100,14 +100,14 @@ void sumaEnIncrementos(double *arreglo, long tamArreglo, double factor) {
 int main() {
 
     srand( time(NULL) );
-    // const long tamArreglo = 10000000;
+    const long tamArreglo = 10000000;
     static double arreglo[10000000];// Para que funcione con arreglo de tamanio
                                     // 10 000 000 hay que declarar el arreglo
                                     // estatico, y el tamanio no puede guardarse
                                     // en una variable.
 
     long c; // llenar el arreglo
-    for(c = 0; c < 10000000; c++) {
+    for(c = 0; c < tamArreglo; c++) {
         arreglo[c] = ( (double)rand() / (double)RAND_MAX );
     }
 
