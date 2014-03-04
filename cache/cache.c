@@ -84,9 +84,9 @@ void sumaEnIncrementos(double *arreglo, long tamArreglo, double factor) {
         inicio = clock();
         //long suma = sumaInvertida(arreglo, N);  // r llamadas a la funcion suma
         //long suma = sumaNormal(arreglo, N);
-        //long suma = sumaEnBloques2(arreglo, N);
+        long suma = sumaEnBloques2(arreglo, N);
         //long suma = sumaEnBloques4(arreglo, N);
-        long suma = sumaEnBloques8(arreglo, N);
+        //long suma = sumaEnBloques8(arreglo, N);
         fin = clock();
         double tiempoMS = ((double)(fin - inicio) / CLOCKS_PER_SEC * 1000);
         double bytesSumados = (N-1) * sizeof(double) / (1024);
@@ -100,8 +100,8 @@ void sumaEnIncrementos(double *arreglo, long tamArreglo, double factor) {
 int main() {
 
     srand( time(NULL) );
-    const long tamArreglo = 10000000;
-    static double arreglo[10000000];// Para que funcione con arreglo de tamanio
+    const long tamArreglo = 1000000;
+    static double arreglo[tamArreglo];// Para que funcione con arreglo de tamanio
                                     // 10 000 000 hay que declarar el arreglo
                                     // estatico, y el tamanio no puede guardarse
                                     // en una variable.
