@@ -16,29 +16,15 @@ int main(int argc, char* argv[])
 
     #pragma omp parallel private(i, x) reduction(+:sum)
     {   
-        long num_its = num_steps / omp_get_num_threads();
         step = 1.0 / (double)num_steps;
-        int tid = omp_get_thread_num();
         
-        long start_it = tid * num_its;
-        
-        printf("tid: %d num_its: %d start_it: %d\n", tid, num_its, start_it);
-
-        //#pragma omp for // reduction(+:sum)
         #pragma omp for private(i, x) // reduction(+:sum)
-        //for(i = start_it; i < (start_it + num_its); i++)
         for (i = 0; i < num_steps; i++) 
         {
             x = (i + 0.5) * step;
-            //temp = temp + 4.0 / (1.0 + x*x);
             sum = sum + 4.0 / (1.0 + x*x);
         }
-        //sum += temp;
-        printf("Sum desde thread %d: %f\n", tid, sum);
-
     }
-
-    printf("Sum desde afuera: %f\n", sum);
 
     pi = sum*step;
     stop = clock();
