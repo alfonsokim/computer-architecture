@@ -6,3 +6,5 @@ hello
 *.s
 pi_multi
 pi_serial
+primos_multi
+primos_serial
